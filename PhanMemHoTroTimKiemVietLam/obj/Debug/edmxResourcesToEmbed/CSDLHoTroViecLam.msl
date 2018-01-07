@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TroGiupViecLamModelStoreContainer" CdmEntityContainer="TroGiupViecLamEntities">
+    <EntitySetMapping Name="DoanhNghieps">
+      <EntityTypeMapping TypeName="TroGiupViecLamModel.DoanhNghiep">
+        <MappingFragment StoreEntitySet="DoanhNghiep">
+          <ScalarProperty Name="maDN" ColumnName="maDN" />
+          <ScalarProperty Name="tenDN" ColumnName="tenDN" />
+          <ScalarProperty Name="diaC" ColumnName="diaC" />
+          <ScalarProperty Name="soDT" ColumnName="soDT" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="chuDN" ColumnName="chuDN" />
+          <ScalarProperty Name="quanDN" ColumnName="quanDN" />
+          <ScalarProperty Name="maNN" ColumnName="maNN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LyLichXinViecs">
+      <EntityTypeMapping TypeName="TroGiupViecLamModel.LyLichXinViec">
+        <MappingFragment StoreEntitySet="LyLichXinViec">
+          <ScalarProperty Name="maCV" ColumnName="maCV" />
+          <ScalarProperty Name="tenNV" ColumnName="tenNV" />
+          <ScalarProperty Name="queQuan" ColumnName="queQuan" />
+          <ScalarProperty Name="dcThuongTru" ColumnName="dcThuongTru" />
+          <ScalarProperty Name="dcTamTru" ColumnName="dcTamTru" />
+          <ScalarProperty Name="soDT" ColumnName="soDT" />
+          <ScalarProperty Name="cmND" ColumnName="cmND" />
+          <ScalarProperty Name="sucKhoe" ColumnName="sucKhoe" />
+          <ScalarProperty Name="eMail" ColumnName="eMail" />
+          <ScalarProperty Name="maDN" ColumnName="maDN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NganhNghes">
+      <EntityTypeMapping TypeName="TroGiupViecLamModel.NganhNghe">
+        <MappingFragment StoreEntitySet="NganhNghe">
+          <ScalarProperty Name="maNN" ColumnName="maNN" />
+          <ScalarProperty Name="tenNN" ColumnName="tenNN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAIKHOANs">
+      <EntityTypeMapping TypeName="TroGiupViecLamModel.TAIKHOAN">
+        <MappingFragment StoreEntitySet="TAIKHOAN">
+          <ScalarProperty Name="passTK" ColumnName="passTK" />
+          <ScalarProperty Name="tenTK" ColumnName="tenTK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

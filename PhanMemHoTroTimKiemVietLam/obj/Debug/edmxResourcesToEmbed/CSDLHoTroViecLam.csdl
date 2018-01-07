@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TroGiupViecLamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DoanhNghiep">
+    <Key>
+      <PropertyRef Name="maDN" />
+    </Key>
+    <Property Name="maDN" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="tenDN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="diaC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="soDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="chuDN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="quanDN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="maNN" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="NganhNghe" Relationship="Self.FK_DN" FromRole="DoanhNghiep" ToRole="NganhNghe" />
+    <NavigationProperty Name="LyLichXinViecs" Relationship="Self.FK_MADN" FromRole="DoanhNghiep" ToRole="LyLichXinViec" />
+  </EntityType>
+  <EntityType Name="LyLichXinViec">
+    <Key>
+      <PropertyRef Name="maCV" />
+    </Key>
+    <Property Name="maCV" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="tenNV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="queQuan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dcThuongTru" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="dcTamTru" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="soDT" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="cmND" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sucKhoe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eMail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="maDN" Type="String" MaxLength="5" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="DoanhNghiep" Relationship="Self.FK_MADN" FromRole="LyLichXinViec" ToRole="DoanhNghiep" />
+  </EntityType>
+  <EntityType Name="NganhNghe">
+    <Key>
+      <PropertyRef Name="maNN" />
+    </Key>
+    <Property Name="maNN" Type="String" MaxLength="5" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="tenNN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DoanhNghieps" Relationship="Self.FK_DN" FromRole="NganhNghe" ToRole="DoanhNghiep" />
+  </EntityType>
+  <Association Name="FK_DN">
+    <End Role="NganhNghe" Type="Self.NganhNghe" Multiplicity="0..1" />
+    <End Role="DoanhNghiep" Type="Self.DoanhNghiep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NganhNghe">
+        <PropertyRef Name="maNN" />
+      </Principal>
+      <Dependent Role="DoanhNghiep">
+        <PropertyRef Name="maNN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MADN">
+    <End Role="DoanhNghiep" Type="Self.DoanhNghiep" Multiplicity="0..1" />
+    <End Role="LyLichXinViec" Type="Self.LyLichXinViec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DoanhNghiep">
+        <PropertyRef Name="maDN" />
+      </Principal>
+      <Dependent Role="LyLichXinViec">
+        <PropertyRef Name="maDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TroGiupViecLamEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DoanhNghieps" EntityType="Self.DoanhNghiep" />
+    <EntitySet Name="LyLichXinViecs" EntityType="Self.LyLichXinViec" />
+    <EntitySet Name="NganhNghes" EntityType="Self.NganhNghe" />
+    <AssociationSet Name="FK_DN" Association="Self.FK_DN">
+      <End Role="NganhNghe" EntitySet="NganhNghes" />
+      <End Role="DoanhNghiep" EntitySet="DoanhNghieps" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MADN" Association="Self.FK_MADN">
+      <End Role="DoanhNghiep" EntitySet="DoanhNghieps" />
+      <End Role="LyLichXinViec" EntitySet="LyLichXinViecs" />
+    </AssociationSet>
+    <EntitySet Name="TAIKHOANs" EntityType="TroGiupViecLamModel.TAIKHOAN" />
+  </EntityContainer>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="tenTK" />
+    </Key>
+    <Property Name="tenTK" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="passTK" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

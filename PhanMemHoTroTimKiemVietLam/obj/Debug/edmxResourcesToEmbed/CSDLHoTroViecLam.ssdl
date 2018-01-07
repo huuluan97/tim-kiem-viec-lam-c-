@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TroGiupViecLamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DoanhNghiep">
+    <Key>
+      <PropertyRef Name="maDN" />
+    </Key>
+    <Property Name="maDN" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="tenDN" Type="nvarchar" MaxLength="50" />
+    <Property Name="diaC" Type="nvarchar" MaxLength="100" />
+    <Property Name="soDT" Type="char" MaxLength="10" />
+    <Property Name="eMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="chuDN" Type="nvarchar" MaxLength="50" />
+    <Property Name="quanDN" Type="nvarchar" MaxLength="15" />
+    <Property Name="maNN" Type="nchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="LyLichXinViec">
+    <Key>
+      <PropertyRef Name="maCV" />
+    </Key>
+    <Property Name="maCV" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="tenNV" Type="nvarchar" MaxLength="50" />
+    <Property Name="queQuan" Type="nvarchar" MaxLength="100" />
+    <Property Name="dcThuongTru" Type="nvarchar" MaxLength="100" />
+    <Property Name="dcTamTru" Type="nvarchar" MaxLength="100" />
+    <Property Name="soDT" Type="char" MaxLength="10" />
+    <Property Name="cmND" Type="nchar" MaxLength="10" />
+    <Property Name="sucKhoe" Type="nvarchar" MaxLength="50" />
+    <Property Name="eMail" Type="nvarchar" MaxLength="50" />
+    <Property Name="maDN" Type="nchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="NganhNghe">
+    <Key>
+      <PropertyRef Name="maNN" />
+    </Key>
+    <Property Name="maNN" Type="nchar" MaxLength="5" Nullable="false" />
+    <Property Name="tenNN" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="tenTK" />
+    </Key>
+    <Property Name="tenTK" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="passTK" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_DN">
+    <End Role="NganhNghe" Type="Self.NganhNghe" Multiplicity="0..1" />
+    <End Role="DoanhNghiep" Type="Self.DoanhNghiep" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NganhNghe">
+        <PropertyRef Name="maNN" />
+      </Principal>
+      <Dependent Role="DoanhNghiep">
+        <PropertyRef Name="maNN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MADN">
+    <End Role="DoanhNghiep" Type="Self.DoanhNghiep" Multiplicity="0..1" />
+    <End Role="LyLichXinViec" Type="Self.LyLichXinViec" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DoanhNghiep">
+        <PropertyRef Name="maDN" />
+      </Principal>
+      <Dependent Role="LyLichXinViec">
+        <PropertyRef Name="maDN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TroGiupViecLamModelStoreContainer">
+    <EntitySet Name="DoanhNghiep" EntityType="Self.DoanhNghiep" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LyLichXinViec" EntityType="Self.LyLichXinViec" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NganhNghe" EntityType="Self.NganhNghe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_DN" Association="Self.FK_DN">
+      <End Role="NganhNghe" EntitySet="NganhNghe" />
+      <End Role="DoanhNghiep" EntitySet="DoanhNghiep" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MADN" Association="Self.FK_MADN">
+      <End Role="DoanhNghiep" EntitySet="DoanhNghiep" />
+      <End Role="LyLichXinViec" EntitySet="LyLichXinViec" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

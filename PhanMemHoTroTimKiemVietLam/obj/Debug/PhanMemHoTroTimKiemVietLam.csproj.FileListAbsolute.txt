@@ -1,0 +1,14 @@
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\bin\Debug\PhanMemHoTroTimKiemVietLam.exe.config
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\bin\Debug\PhanMemHoTroTimKiemVietLam.exe
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\bin\Debug\PhanMemHoTroTimKiemVietLam.pdb
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\obj\Debug\PhanMemHoTroTimKiemVietLam.csprojResolveAssemblyReference.cache
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\obj\Debug\PhanMemHoTroTimKiemVietLam.frmMain.resources
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\obj\Debug\PhanMemHoTroTimKiemVietLam.Properties.Resources.resources
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\obj\Debug\PhanMemHoTroTimKiemVietLam.csproj.GenerateResource.Cache
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\obj\Debug\PhanMemHoTroTimKiemVietLam.exe
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\obj\Debug\PhanMemHoTroTimKiemVietLam.pdb
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\bin\Debug\EntityFramework.dll
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\bin\Debug\EntityFramework.SqlServer.dll
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\bin\Debug\EntityFramework.xml
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\bin\Debug\EntityFramework.SqlServer.xml
+E:\C#Document\DeTaiC#\TimKiemViecLam\PhanMemHoTroTimKiemVietLam\obj\Debug\PhanMemHoTroTimKiemVietLam.frmDangNhap.resources
